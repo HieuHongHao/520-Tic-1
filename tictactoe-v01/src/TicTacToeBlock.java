@@ -46,11 +46,7 @@ public class TicTacToeBlock
      * @throws IllegalArgumentException When the given value is null
      */
     public void setContents(String value) {
-	if (value == null) {
-	    throw new IllegalArgumentException("The value must be non-null.");
-	}
-    Logger.log("manipulates");
-	this.contents = value;
+	
     }
 
     /**

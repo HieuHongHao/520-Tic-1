@@ -120,7 +120,22 @@ public class TicTacToeGame {
 			playerturn.setText(GAME_END_NOWINNER);
 		    }
 		}
-	    }  else if(block==blocks[0][2]) {
+	    } else if(block==blocks[0][1]) {
+		blocksData[0][1].setContents("X");
+		updateBlock(0,1);
+		player = "2";
+		if(movesLeft<7) {
+		    if((blocksData[0][1].getContents().equals(blocksData[0][0].getContents()) &&
+			blocksData[0][0].getContents().equals(blocksData[0][2].getContents())) ||
+		       (blocksData[0][1].getContents().equals(blocksData[1][1].getContents()) &&
+			blocksData[1][1].getContents().equals(blocksData[2][1].getContents()))) {
+			playerturn.setText("Player 1 wins!");
+			endGame();
+		    } else if(movesLeft==0) {
+			playerturn.setText(GAME_END_NOWINNER);
+		    }
+		}
+	    } else if(block==blocks[0][2]) {
 		blocksData[0][2].setContents("X");
 		updateBlock(0,2);
 		player = "2";
